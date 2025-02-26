@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const glowVariants = {
@@ -132,14 +132,6 @@ const pokemons = [
 export function PokemonShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentPokemon = pokemons[currentIndex];
-
-  const nextPokemon = () => {
-    setCurrentIndex((prev) => (prev + 1) % pokemons.length);
-  };
-
-  const prevPokemon = () => {
-    setCurrentIndex((prev) => (prev - 1 + pokemons.length) % pokemons.length);
-  };
 
   return (
     <section className="min-h-screen py-20 relative overflow-hidden px-4 md:px-0">

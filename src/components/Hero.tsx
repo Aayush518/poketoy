@@ -1,5 +1,4 @@
-import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 
 const POKEMON_SPRITES = [25, 6, 150, 384, 249];
@@ -15,7 +14,7 @@ export function Hero() {
   const [isHovered, setIsHovered] = useState(false);
   const [activePokemon, setActivePokemon] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+  const { /* scrollYProgress */ } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
@@ -26,9 +25,6 @@ export function Hero() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.2, 1]);
 
   return (
     <section className="min-h-screen flex items-center pt-20 sm:pt-24 lg:pt-0 relative overflow-hidden" ref={containerRef}>

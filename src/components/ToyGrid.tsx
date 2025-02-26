@@ -348,7 +348,12 @@ const categories = [
   { id: 'ice', name: '❄️ Ice Type' }
 ];
 
-const toyCategories = {
+// Add type definition for toyCategories
+interface ToyCategories {
+  [key: number]: string[];
+}
+
+const toyCategories: ToyCategories = {
   1: ['electric', 'starter'],  // Pikachu
   2: ['fire', 'dragon', 'starter'],  // Charizard
   3: ['grass', 'starter'],  // Bulbasaur

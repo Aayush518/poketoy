@@ -4,7 +4,6 @@ import { ArrowRight } from 'lucide-react';
 
 export function Contact() {
   const [email, setEmail] = useState('');
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
